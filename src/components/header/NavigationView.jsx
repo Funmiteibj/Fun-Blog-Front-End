@@ -19,6 +19,7 @@ const NavigationView = () => {
             <Nav.Link to="/blog" as={Link}>Blogs</Nav.Link>
             <Nav.Link to="/profile" as={Link}>Profile</Nav.Link>
             <Nav.Link to="/contact" as={Link}>Contact</Nav.Link>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>

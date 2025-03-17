@@ -12,7 +12,7 @@ const PostList = () => {
     const fetchPost = async () => {
         setLoading(true);
         try {
-            const url = "http://localhost:5000/posts/api/fetch-all"
+            const url = "https://fun-blog-backend.onrender.com/posts/api/fetch-all"
 
             const result = await fetch(url);
             const data = await result.json();

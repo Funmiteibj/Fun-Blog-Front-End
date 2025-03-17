@@ -9,6 +9,7 @@ import StudentView from "./components/student/StudentView"
 import BlogView from "./components/blog/BlogView"
 import ContactUs from "./components/contact/ContactUs"
 import ProfileList from "./components/profile/ProfileList"
+import AddPost from "./components/blog/AddPost"
 
 
 const App = () => {
@@ -28,7 +29,8 @@ const App = () => {
         <Route path="/profile" element={<ProfileList />} />
         <Route path="/blog" element={<BlogView />} />
         <Route path="/contact" element={<ContactUs />} />
-        
+        <Route path="/add-post" element={<AddPost />} />
+
       </Routes>
 
 

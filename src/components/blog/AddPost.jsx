@@ -37,7 +37,7 @@ const AddPost = () => {
         // send data to backend server
 
         try {
-            const url = "http://localhost:5000/posts/api/create-post";
+            const url = "https://fun-blog-backend.onrender.com/posts/api/create-post";
 
             const response = await fetch(url, {
                 method: "POST",
