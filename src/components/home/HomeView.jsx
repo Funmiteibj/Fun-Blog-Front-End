@@ -1,13 +1,22 @@
 import React from 'react'
+import Login from '../auth/Login'
 
-const HomeView = () => {
+const HomeView = ({isLogin, setIsLogin, setUsername}) => {
   return (
-    <div className='container mt-5'>
+
+    <>
+
+    {isLogin ? (<div className='container mt-5'>
         <h1 className='text-primary'>
             Welcome to Home Page
         </h1>
 
-    </div>
+        
+
+    </div>): <Login/>}
+    
+    </>
+    
   )
 }
 

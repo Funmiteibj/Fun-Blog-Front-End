@@ -2,8 +2,14 @@
 import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
 import Spinner from 'react-bootstrap/Spinner';
+import { useNavigate } from "react-router-dom";
 
 const PostList = () => {
+    const style ={
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr",
+        gap: "16px"
+    }
     // create a component state for data
     const [postData, setPostData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -25,14 +31,22 @@ const PostList = () => {
     // call the fetch func inside useEffect
     useEffect(() => {
         fetchPost();
-    }, [])
+    }, []);
+
+    // create an instance of use Navigate
+    const navigate = useNavigate();      
+
+    const handleOpenPost=(postId) => {
+        //alert(`id ${postId}`)
+        navigate(`/post/${postId}`)
+    }
+
   return (
     <div className="container mt-5">
         <h1 className="my-3 text-primary">Our Blogs List</h1>
-
-        {loading ? (<Spinner animation="border" variant="primary" />) : (<div>
+        {loading ? (<Spinner animation="border" variant="primary" />) : (<div style={style}>
             {postData.map((item) => (
-                <PostCard postObj={item}/>
+                <PostCard  postObj={item} func={() => {handleOpenPost(item._id)}}/>
             ))}
         </div>)}
     </div>

@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from "react-router-dom"
 
-const NavigationView = () => {
+const NavigationView = ({loginUser}) => {
   return (
 
 <Navbar expand="lg" bg="primary" data-bs-theme="dark">
@@ -17,11 +17,13 @@ const NavigationView = () => {
             <Nav.Link to="/about" as={Link}>About</Nav.Link>
             <Nav.Link to="/student" as={Link}>Student</Nav.Link>
             <Nav.Link to="/blog" as={Link}>Blogs</Nav.Link>
+            <Nav.Link to="/jobs" as={Link}>Jobs</Nav.Link>
             <Nav.Link to="/profile" as={Link}>Profile</Nav.Link>
-            <Nav.Link to="/contact" as={Link}>Contact</Nav.Link>
-           
+            <Nav.Link to="/contact-us" as={Link}>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+
+        <h6 className='text-white'>Login:{loginUser}</h6>
       </Container>
     </Navbar>
   )
